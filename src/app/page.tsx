@@ -8,6 +8,7 @@ export default function Home() {
         <UserButton />
         <ThemeToggle />
       </div>
+      <div className="font-barlow text-6xl text-red-300">Homepage</div>
     </div>
   );
 }
