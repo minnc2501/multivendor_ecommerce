@@ -1,38 +1,34 @@
-//Next.js
+// Next.js
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Barlow } from "next/font/google";
+import { Inter, Barlow } from "next/font/google";
 
-//Global css
+// Global css
 import "./globals.css";
 
-//Theme provider
+// Theme provider
 import { ThemeProvider } from "next-themes";
 
-//Clerk provider
+// Clerk provider
 import { ClerkProvider } from "@clerk/nextjs";
 
-//Fonts
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// Toast
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
+import ModalProvider from "@/providers/modal-provider";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+// Fonts
+const interFont = Inter({ subsets: ["latin"] });
 const barlowFont = Barlow({
-  weight: ["500", "700"],
   subsets: ["latin"],
+  weight: ["500", "700"],
   variable: "--font-barlow",
 });
 
-//Meta data
+// Metadata
 export const metadata: Metadata = {
-  title: "MiniShop",
+  title: "GoShop",
   description:
-    "Welcome to MiniShop, your ultimate destination for seamless online shopping, and exprerience the joy of hassle-free online shopping. Start explore today!",
+    "Welcome to GoShop, your ultimate destination for seamless online shopping! Discover a vast array of products from trusted sellers, all in one convenient marketplace. With GoShop, shopping is made easy, fast, and enjoyable. Find everything you need, from fashion and electronics to home essentials, and experience the joy of hassle-free online shopping. Start exploring today!",
 };
 
 export default function RootLayout({
@@ -43,16 +39,16 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable}  ${barlowFont.variable} antialiased`}
-        >
+        <body className={`${interFont.className} ${barlowFont.variable}`}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <ModalProvider>{children}</ModalProvider>
+            <Toaster />
+            <SonnerToaster position="bottom-left" />
           </ThemeProvider>
         </body>
       </html>
