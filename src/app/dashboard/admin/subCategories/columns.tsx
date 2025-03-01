@@ -32,7 +32,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 // Hooks and utilities
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { useModal } from "@/providers/modal-provider";
 
 // Lucide icons

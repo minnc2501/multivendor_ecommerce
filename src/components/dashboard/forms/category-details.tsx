@@ -42,7 +42,7 @@ import { upsertCategory } from "@/queries/category";
 
 // Utils
 import { v4 } from "uuid";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 
 interface CategoryDetailsProps {

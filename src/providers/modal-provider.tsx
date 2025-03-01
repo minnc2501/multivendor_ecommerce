@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 // React, Next.js
@@ -16,7 +17,6 @@ export type ModalData = {
 type ModalContextType = {
   data: ModalData;
   isOpen: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setOpen: (modal: React.ReactNode, fetchData?: () => Promise<any>) => void;
   setClose: () => void;
 };
@@ -24,7 +24,6 @@ type ModalContextType = {
 export const ModalContext = createContext<ModalContextType>({
   data: {},
   isOpen: false,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars,, @typescript-eslint/no-explicit-any
   setOpen: (modal: React.ReactNode, fetchData?: () => Promise<any>) => {},
   setClose: () => {},
 });

@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/command";
 
 // Icons
-import { icons } from "@/constant/icons";
+import { icons } from "@/constants/icons";
 
 // types
 import { DashboardSidebarMenuInterface } from "@/lib/types";

@@ -42,7 +42,7 @@ import { upsertSubCategory } from "@/queries/subCategory";
 
 // Utils
 import { v4 } from "uuid";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import {
   Select,
